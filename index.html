@@ -1,0 +1,915 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TRADE WITH ARUN</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#170304;
+    color:#fff;
+}
+
+
+/* =========================
+   MAIN PAGE
+========================= */
+
+.page{
+    width:100%;
+    min-height:100vh;
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255,185,0,.10),
+            transparent 34%
+        ),
+        linear-gradient(
+            180deg,
+            #210506 0%,
+            #170304 100%
+        );
+}
+
+.container{
+    width:100%;
+    max-width:620px;
+    margin:0 auto;
+
+    padding:28px 18px 15px;
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile-wrap{
+    display:flex;
+    justify-content:center;
+    margin-bottom:24px;
+}
+
+.profile{
+    width:145px;
+    height:145px;
+
+    padding:4px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd000,
+            #9d6500,
+            #ffd000
+        );
+
+    box-shadow:
+        0 0 25px rgba(255,183,0,.18),
+        0 0 60px rgba(255,183,0,.08);
+}
+
+.profile img{
+    width:100%;
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:4px solid #210506;
+}
+
+
+/* =========================
+   NAME
+========================= */
+
+.name{
+    text-align:center;
+
+    font-size:32px;
+    line-height:1.2;
+
+    font-weight:800;
+
+    letter-spacing:.3px;
+
+    margin-bottom:20px;
+}
+
+.crown{
+    font-size:24px;
+}
+
+
+/* =========================
+   MARKET
+========================= */
+
+.market{
+    text-align:center;
+
+    color:#ffc400;
+
+    font-family:Georgia,serif;
+
+    font-size:21px;
+
+    font-weight:bold;
+
+    letter-spacing:1px;
+
+    margin-bottom:16px;
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.description{
+    text-align:center;
+
+    color:#eee;
+
+    font-family:Georgia,serif;
+
+    font-size:17px;
+
+    line-height:1.45;
+
+    font-weight:bold;
+
+    margin-bottom:27px;
+}
+
+
+/* =========================
+   TELEGRAM BUTTON
+========================= */
+
+.telegram-btn{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:11px;
+
+    width:100%;
+    min-height:64px;
+
+    padding:14px 18px;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffc400,
+            #efa800
+        );
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    font-weight:800;
+
+    letter-spacing:.2px;
+
+    box-shadow:
+        0 7px 24px rgba(255,174,0,.18),
+        inset 0 1px 0 rgba(255,255,255,.28);
+
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease,
+        opacity .18s ease;
+
+    -webkit-tap-highlight-color:transparent;
+
+    user-select:none;
+}
+
+.telegram-btn:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 10px 30px rgba(255,174,0,.28);
+}
+
+.telegram-btn:active{
+    transform:scale(.985);
+}
+
+.telegram-btn.disabled{
+    opacity:.65;
+    pointer-events:none;
+}
+
+.telegram-icon{
+    width:24px;
+    height:24px;
+
+    flex:0 0 24px;
+
+    fill:#fff;
+}
+
+
+/* =========================
+   FEATURE CARDS
+========================= */
+
+.cards{
+    margin-top:32px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:15px;
+}
+
+.card{
+    min-height:103px;
+
+    display:flex;
+    align-items:center;
+
+    gap:15px;
+
+    padding:16px 14px;
+
+    border:1px solid rgba(205,137,25,.36);
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(57,18,17,.72),
+            rgba(29,7,7,.88)
+        );
+
+    box-shadow:
+        0 10px 28px rgba(0,0,0,.18),
+        inset 0 1px 0 rgba(255,255,255,.025);
+}
+
+.card-icon{
+    flex:0 0 64px;
+
+    width:64px;
+    height:64px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:15px;
+
+    border:1px solid rgba(255,181,0,.36);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,186,0,.13),
+            rgba(255,186,0,.02)
+        );
+
+    color:#ffc000;
+
+    font-size:27px;
+
+    box-shadow:
+        inset 0 0 18px rgba(255,177,0,.05);
+}
+
+.card-content{
+    flex:1;
+    min-width:0;
+}
+
+.card-title{
+    color:#fff;
+
+    font-size:19px;
+
+    font-weight:800;
+
+    line-height:1.2;
+
+    margin-bottom:5px;
+}
+
+.card-text{
+    color:#a99a9a;
+
+    font-size:14px;
+
+    line-height:1.35;
+}
+
+.card-check{
+    flex:0 0 34px;
+
+    width:34px;
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,170,0,.38);
+
+    color:#ffb900;
+
+    font-size:16px;
+}
+
+
+/* =========================
+   SECOND BUTTON
+========================= */
+
+.bottom-btn{
+    margin-top:30px;
+}
+
+
+/* =========================
+   DISCLAIMER
+========================= */
+
+.disclaimer{
+    text-align:center;
+
+    color:#806f6f;
+
+    font-size:11px;
+
+    line-height:1.5;
+
+    margin-top:22px;
+
+    padding:0 12px;
+}
+
+
+/* =========================
+   PREMIUM ADSBUILD AGENCY
+========================= */
+
+.agency-footer{
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:26px;
+
+    padding:0 4px 10px;
+}
+
+.agency-badge{
+    width:100%;
+
+    max-width:430px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:7px;
+
+    padding:11px 15px;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(40,14,14,.96),
+            rgba(58,24,14,.96)
+        );
+
+    border:1px solid rgba(255,193,7,.20);
+
+    box-shadow:
+        0 6px 22px rgba(0,0,0,.25),
+        inset 0 1px 0 rgba(255,255,255,.035);
+
+    color:#b9a9a9;
+
+    font-size:12px;
+
+    line-height:1.4;
+
+    text-align:center;
+}
+
+.agency-fire{
+    width:27px;
+    height:27px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:8px;
+
+    background:rgba(255,193,7,.08);
+
+    border:1px solid rgba(255,193,7,.18);
+
+    font-size:13px;
+
+    flex-shrink:0;
+}
+
+.agency-label{
+    color:#9e9191;
+
+    font-weight:500;
+}
+
+.agency-link{
+    color:#ffc400;
+
+    text-decoration:none;
+
+    font-weight:800;
+
+    letter-spacing:.4px;
+
+    transition:.2s ease;
+}
+
+.agency-link:hover{
+    color:#ffe27a;
+}
+
+.agency-growth{
+    color:#9e9191;
+
+    font-weight:500;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:480px){
+
+    .container{
+        padding:25px 16px 12px;
+    }
+
+    .profile{
+        width:140px;
+        height:140px;
+    }
+
+    .name{
+        font-size:28px;
+    }
+
+    .crown{
+        font-size:22px;
+    }
+
+    .market{
+        font-size:19px;
+    }
+
+    .description{
+        font-size:16px;
+    }
+
+    .telegram-btn{
+        min-height:63px;
+
+        font-size:17px;
+    }
+
+    .card{
+        min-height:100px;
+
+        padding:15px 12px;
+
+        gap:12px;
+    }
+
+    .card-icon{
+        width:60px;
+        height:60px;
+
+        flex-basis:60px;
+
+        font-size:24px;
+    }
+
+    .card-title{
+        font-size:17px;
+    }
+
+    .card-text{
+        font-size:13px;
+    }
+
+    .card-check{
+        width:30px;
+        height:30px;
+
+        flex-basis:30px;
+    }
+
+    .agency-footer{
+        margin-top:23px;
+
+        padding-bottom:7px;
+    }
+
+    .agency-badge{
+        max-width:100%;
+
+        padding:10px 10px;
+
+        gap:5px;
+
+        font-size:10.5px;
+    }
+
+    .agency-fire{
+        width:25px;
+        height:25px;
+
+        font-size:12px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="page">
+
+<div class="container">
+
+
+    <!-- =========================
+         PROFILE PHOTO
+    ========================== -->
+
+    <div class="profile-wrap">
+
+        <div class="profile">
+
+            <img
+                src="p.jpg"
+                alt="TRADE WITH ARUN"
+                loading="eager"
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         NAME
+    ========================== -->
+
+    <h1 class="name">
+
+        <span class="crown">👑</span>
+
+        TRADE WITH ARUN
+
+        <span class="crown">👑</span>
+
+    </h1>
+
+
+    <!-- =========================
+         MARKET
+    ========================== -->
+
+    <div class="market">
+        NIFTY • BANKNIFTY • SENSEX
+    </div>
+
+
+    <!-- =========================
+         DESCRIPTION
+    ========================== -->
+
+    <div class="description">
+
+        Clear market insights. Timely updates.<br>
+
+        One focused trading community
+
+    </div>
+
+
+    <!-- =========================
+         TELEGRAM BUTTON 1
+    ========================== -->
+
+    <a
+        class="telegram-btn"
+        href="https://t.me/+vuPbK4FamItjOWE1"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+
+        <svg
+            class="telegram-icon"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+        >
+
+            <path d="M21.9 3.1c.3-1.2-.5-1.7-1.5-1.3L2.2 9.1c-1.2.5-1.2 1.2-.2 1.5l4.6 1.4 1.7 5.3c.2.6.1.9.5.9.3 0 .5-.1.7-.3l2.2-2.1 4.6 3.4c.8.4 1.4.2 1.6-.8L21.9 3.1zM7.4 11.5l10.8-6.8c.5-.3.9-.1.5.2l-9 8.1-.3 3.2-1.5 4.7-1.5-4.7-2.9-.9c-.6-.2-.6-.5.4-.9z"/>
+
+        </svg>
+
+        JOIN TELEGRAM CHANNEL
+
+    </a>
+
+
+    <!-- =========================
+         FEATURE CARDS
+    ========================== -->
+
+    <div class="cards">
+
+
+        <!-- CARD 1 -->
+
+        <div class="card">
+
+            <div class="card-icon">
+                ↗
+            </div>
+
+            <div class="card-content">
+
+                <div class="card-title">
+                    Daily Market Insights
+                </div>
+
+                <div class="card-text">
+                    Actionable market updates shared consistently
+                </div>
+
+            </div>
+
+            <div class="card-check">
+                ✓
+            </div>
+
+        </div>
+
+
+        <!-- CARD 2 -->
+
+        <div class="card">
+
+            <div class="card-icon">
+                ◎
+            </div>
+
+            <div class="card-content">
+
+                <div class="card-title">
+                    Research-Based Analysis
+                </div>
+
+                <div class="card-text">
+                    Key levels and market observations with a clear view
+                </div>
+
+            </div>
+
+            <div class="card-check">
+                ★
+            </div>
+
+        </div>
+
+
+        <!-- CARD 3 -->
+
+        <div class="card">
+
+            <div class="card-icon">
+                ♙
+            </div>
+
+            <div class="card-content">
+
+                <div class="card-title">
+                    Market Experience
+                </div>
+
+                <div class="card-text">
+                    Perspective developed through different market cycles
+                </div>
+
+            </div>
+
+            <div class="card-check">
+                ✓
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =========================
+         TELEGRAM BUTTON 2
+    ========================== -->
+
+    <div class="bottom-btn">
+
+        <a
+            class="telegram-btn"
+            href="https://t.me/+vuPbK4FamItjOWE1"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <svg
+                class="telegram-icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+            >
+
+                <path d="M21.9 3.1c.3-1.2-.5-1.7-1.5-1.3L2.2 9.1c-1.2.5-1.2 1.2-.2 1.5l4.6 1.4 1.7 5.3c.2.6.1.9.5.9.3 0 .5-.1.7-.3l2.2-2.1 4.6 3.4c.8.4 1.4.2 1.6-.8L21.9 3.1zM7.4 11.5l10.8-6.8c.5-.3.9-.1.5.2l-9 8.1-.3 3.2-1.5 4.7-1.5-4.7-2.9-.9c-.6-.2-.6-.5.4-.9z"/>
+
+            </svg>
+
+            JOIN TELEGRAM CHANNEL
+
+        </a>
+
+    </div>
+
+
+    <!-- =========================
+         DISCLAIMER
+    ========================== -->
+
+    <div class="disclaimer">
+
+        Market information is provided for educational purposes only.
+        Please conduct your own research and consider your risk profile.
+
+    </div>
+
+
+    <!-- =========================
+         PREMIUM APEagency
+    ========================== -->
+
+    <div class="agency-footer">
+
+        <div class="agency-badge">
+
+            <span class="agency-fire">
+                🔥
+            </span>
+
+            <span class="agency-label">
+                Ads by
+            </span>
+
+            <a
+                class="agency-link"
+                href="https://telegram.me/+glAYUyGU735iNmQ1"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                APEagency
+            </a>
+
+            <span class="agency-growth">
+                • Instant Growth 🚀
+            </span>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     DOUBLE-CLICK PROTECTION
+========================= -->
+
+<script>
+
+(function(){
+
+    const buttons =
+        document.querySelectorAll(".telegram-btn");
+
+    buttons.forEach(function(button){
+
+        let locked = false;
+
+        button.addEventListener("click",function(){
+
+            if(locked){
+                return;
+            }
+
+            locked = true;
+
+            button.classList.add("disabled");
+
+            setTimeout(function(){
+
+                locked = false;
+
+                button.classList.remove("disabled");
+
+            },1500);
+
+        });
+
+    });
+
+})();
+
+</script>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1636827574737969');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1636827574737969&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+</body>
+</html>
